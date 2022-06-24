@@ -1,7 +1,7 @@
 <template>
     <div class="table-row">
         <div class="name">
-            <router-link class="text" to="/result/detail">{{ name }}</router-link>
+            <router-link class="text" :to="{ name: 'detail', params: {name: name} }">{{ name }}</router-link>
         </div>
         <div class="rate">
             <img :class="className" src="@/assets/bar.png" />
@@ -14,20 +14,22 @@ export default {
     props: {
         name: String,
         percentage: String,
-        className: String
+        className: String,
+        info: Array,
     },
     data() {
         return {
+            huboName: "남지현"
         }
     },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
     .table-row {
         width: 90%;
         display: flex;
         .name {
-            width: 250px;
+            width: 150px;
             border: solid 1px black;
             text-align: center;
             .text {
@@ -36,7 +38,7 @@ export default {
             }
         }
         .rate {
-            width: 100%;
+            width: 500px;
             border: solid 1px black;
             padding-top: 10px;
             padding-bottom: 5px;

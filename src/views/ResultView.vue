@@ -5,7 +5,8 @@
             <CandidatesRowsView 
                 :name="candi.name" 
                 :percentage="candi.percentage" 
-                :className="candi.className"/>
+                :className="candi.className"
+                :info="candidates" />
         </div>
     </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
     <div class="result-box">
-        <p class="title">1. 김일돌 후보 득표성향 분석</p>
+        <p class="title">{{ $route.params.name }} 후보 득표성향 분석</p>
         <div class="table" v-for="age in ages" :key="age.name">
             <AgesRowsView 
                 :name="age.name" 
